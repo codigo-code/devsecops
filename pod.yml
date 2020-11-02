@@ -1,0 +1,9 @@
+ApiVersion: v1
+Kind: Pod
+metadata:
+	name: DockerTest
+spec:
+	containers:
+		name: saludo
+		image: saludo-java
+		
