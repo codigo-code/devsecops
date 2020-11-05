@@ -7,20 +7,15 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      parallel {
-        stage('Test') {
-          steps {
-            sh 'echo LOG = sh(docker run codigocode-test)'
-          }
-        }
+    stage('deploy') {
+      steps {
+        sh 'docker run -p 8080:8080 -it codigocode-test'
+      }
+    }
 
-        stage('Guardar Log') {
-          steps {
-            writeFile(file: 'log.txt', text: '${LOG}')
-          }
-        }
-
+    stage('') {
+      steps {
+        sh 'start http://localhost:8080/saludar'
       }
     }
 
