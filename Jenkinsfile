@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('clone') {
+    stage('enter the build') {
       steps {
-        sh 'git clone https://github.com/codigo-code/devsecops.git '
+        sh 'cd devsecops_master'
       }
     }
 
